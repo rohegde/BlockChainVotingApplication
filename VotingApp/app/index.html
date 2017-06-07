@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Voting App</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href="./app.css" rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <div class="container">
+  <h2>Voting App</h2>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">creating Ballot</a></li>
+    <li><a data-toggle="tab" href="#menu1">Right to Vote</a></li>
+    <li><a data-toggle="tab" href="#menu2">Vote</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <br>
+      <h1>Creating Ballot</h1>
+
+
+      <br><label for="data">No of Contestants : </label><input type="number" id="data" placeholder="e.g., 95"></input>
+
+      <br><input type="button" onclick="createBallot()" value="Create Ballot" />
+
+
+      <br><span id="status"></span></p>
+      <br>
+      <p><h3>The winner for ballot <span class="black"><span id="balance"></span> </span></h3>
+      <button id="winner" onclick="winningProposal()">Winner</button>
+      <br>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>Right to Vote</h3>
+      <br>
+      <h1>Right to Vote</h1>
+      <br><label for="receiver">Give Right to:</label><input type="text" id="receiver" placeholder="e.g., 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae"></input>
+      <br><br><button id="righttovote" onclick="giveRightToVote()">Right to Vote</button>
+      <br><br>
+      <span id="status1"></span></p>
+    </div>
+    <div id="menu2"  type="text" onclick="displayProposal()" class="tab-pane fade">
+      <h3 >Vote</h3>
+      <ol start="0" id="displayProposal">
+      </ol>
+      <br><br>
+      <h1>Vote for Ballot</h1>
+      <br><label for="receiver1">Vote to:</label><input type="text" id="receiver1" ></input>
+      <br><br><button id="vote" onclick="Vote()">Vote</button>
+      <br><br>
+      <span id="status2"></span></p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
